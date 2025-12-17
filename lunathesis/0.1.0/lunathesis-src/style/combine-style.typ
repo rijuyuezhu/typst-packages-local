@@ -1,11 +1,10 @@
-#let combine-style(..styles) = {
-  content => {
-    for style-func in styles.pos() {
-      if style-func == none {
-        continue
-      }
-      content = style-func(content)
+#let combine-style(..styles) = content => {
+  for style-func in styles.pos() {
+    if style-func == none {
+      continue
     }
-    content
+    content = style-func(content)
   }
+  content
 }
+

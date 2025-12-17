@@ -18,7 +18,7 @@
 }
 
 #let bib-normalize-to-bytes(bib) = {
-  let convert_one(p) = {
+  let convert-one(p) = {
     if type(p) == str {
       bytes(p)
     } else if type(p) == bytes {
@@ -30,8 +30,8 @@
   if bib == none {
     none
   } else if type(bib) == array {
-    bib.map(convert_one)
+    bib.map(convert-one)
   } else {
-    convert_one(bib)
+    convert-one(bib)
   }
 }
